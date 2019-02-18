@@ -1,0 +1,23 @@
+# Recognizes sequences which starts and ends with equal symbols
+2 4 6
+1 x 2
+1 y 4
+1 z 6
+2 x 2
+2 y 3
+2 z 3
+3 x 2
+3 y 3
+3 z 3
+4 x 5
+4 y 4
+4 z 5
+5 x 5
+5 y 4
+5 z 5
+6 x 7
+6 y 7
+6 z 6
+7 x 7
+7 y 7
+7 z 6

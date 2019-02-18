@@ -1,0 +1,14 @@
+# Recognizes sequences which ends with 3 symbols "x"
+4
+1 x 2
+1 y 1
+1 z 1
+2 x 3
+2 y 1
+2 z 1
+3 x 4
+3 y 1
+3 z 1
+4 x 4
+4 y 1
+4 z 1

@@ -1,0 +1,6 @@
+# Even symbol 'b' in sequence recognition
+1
+1 a 1
+1 b 2
+2 a 2
+2 b 1
