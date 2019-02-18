@@ -1,0 +1,18 @@
+# Recognizes sequences which starts or ends with 3 symbols "x"
+4 8
+1 x 2
+1 y 5
+2 x 3
+2 y 5
+3 x 4
+3 y 5
+4 x 4
+4 y 4
+5 x 6
+5 y 5
+6 x 7
+6 y 5
+7 x 8
+7 y 5
+8 x 8
+8 y 5
