@@ -25,13 +25,17 @@ public class FiniteStateMachine {
             try {
                 int i = Integer.valueOf(number);
                 if (i < 1) {
-                    throw new FiniteStateMachineException("Wrong file format");
+                    throw new FiniteStateMachineException("Wrong file format: incorrect final state");
                 }
             } catch (NumberFormatException e) {
-                throw new FiniteStateMachineException("Wrong file format");
+                throw new FiniteStateMachineException("Wrong file format: incorrect final state");
             }
             finalStates.add(Integer.valueOf(number));
         }
+        if (finalStates.isEmpty()) {
+            throw new FiniteStateMachineException("Wrong file format: empty final states");
+        }
+
         while ((line = reader.readLine()) != null){
             if (line.startsWith("#")) { continue; }
 
@@ -43,6 +47,19 @@ public class FiniteStateMachine {
             int startState = Integer.valueOf(tmp[0]);
             char symbol = tmp[1].toCharArray()[0];
             int endState = Integer.valueOf(tmp[2]);
+            try {
+                startState = Integer.valueOf(tmp[0]);
+                symbol = tmp[1].toCharArray()[0];
+                endState = Integer.valueOf(tmp[2]);
+                if (startState < 1 || endState < 1) {
+                    throw new FiniteStateMachineException("Wrong file format: incorrect start or end state state");
+                }
+                if (!Character.isLetter(symbol)) {
+                    throw new FiniteStateMachineException("Wrong file format: incorrect transition symbol");
+                }
+            } catch (NumberFormatException e) {
+                throw new FiniteStateMachineException("Wrong file format: incorrect start or end state");
+            }
 
             if (!transitionRules.containsKey(startState)) {
                 transitionRules.put(startState, new HashMap<>());
@@ -52,9 +69,13 @@ public class FiniteStateMachine {
             }
             transitionRules.get(startState).put(symbol, endState);
         }
+        if (transitionRules.isEmpty()) {
+            throw new FiniteStateMachineException("Wrong file format: empty transition rules");
+        }
     }
 
     public boolean checkSequence(String seq) throws FiniteStateMachineException {
+        /* Default initial state is "1". All fcm`s can be converted to start from "1" state */
         currentState = 1;
         if (finalStates.isEmpty() || transitionRules.isEmpty()) {
             throw new FiniteStateMachineException("No init yet");

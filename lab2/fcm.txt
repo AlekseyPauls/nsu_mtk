@@ -1,4 +1,11 @@
+# This is an example of FCM description file
+# Lines started with '#' are comments. You can`t write comment in one line with final states or transition rules,
+# write comments before commenting line
+# First not commented line is final states list. Final states must be a number bigger than 0.
+# There is must to be at least one final state
 1
+# All other lines are transition rules in format "start_state(number > 0) symbol(latin character) end_state(number > 0)"
+# Character case matters. Transition rules can`t be duplicated.
 1 a 1
 1 b 2
 2 a 2
