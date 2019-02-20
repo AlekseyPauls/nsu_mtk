@@ -157,6 +157,9 @@ public class FiniteStateMachineTest {
                 fcm.init("wrongformat3.txt");
                 fcm.init("wrongformat4.txt");
                 fcm.init("wrongformat5.txt");
+                fcm.init("wrongformat6.txt");
+                fcm.init("wrongformat7.txt");
+                fcm.init("wrongformat8.txt");
         }
 
         @Test(expected = FiniteStateMachineException.class)
