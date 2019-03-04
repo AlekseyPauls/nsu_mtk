@@ -1,0 +1,6 @@
+# Recognizes sequences which contains with "ab"
+3
+1 a 2
+2 a 2
+2 b 2
+2 b 3
